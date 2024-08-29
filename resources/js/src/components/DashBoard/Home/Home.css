@@ -1,0 +1,114 @@
+p {
+    margin-bottom: 0px;
+}
+
+.Hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.Pic {
+    width: 20%;
+    /* border-radius: 30px; */
+}
+
+.HeroTitle span {
+    color: rgb(187, 45, 59);
+    font-weight: 500;
+}
+
+.About,
+.Education,
+.Certificate,
+.Hero,
+.Skill,
+.Experience,
+.Social,
+.Project {
+    margin: 20px 5.4vw;
+}
+
+.About {
+    border-radius: 5px;
+}
+
+.AboutTitle {
+
+    font-weight: 500;
+}
+
+.SkillContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.HeroTitle {
+    margin: 0 20px;
+}
+
+.SkillName {
+    background-color: gray;
+    padding: 7px;
+    border-radius: 12px;
+    border: 2px solid black;
+    margin: 10px;
+    color: white;
+}
+
+.wer {
+    background-color: cadetblue;
+    margin: 0 5px;
+}
+
+.titleSkil,
+.titleExperiences,
+.titleProject,
+.titleCertificate,
+.titleSocial,
+.titleEducation {
+    background: cadetblue;
+    color: white;
+    border-radius: 12px;
+    text-align: center;
+    padding: 3px 0;
+}
+
+.titleProject {
+    margin: 0 5.4vw;
+}
+
+
+.Project {
+    flex-wrap: wrap;
+    display: flex;
+    /* width: 100%; */
+}
+
+.ProjectContainer a {
+    background-color: cadetblue;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.ProjectContainer {
+    margin: 20px;
+    width: 25rem;
+}
+
+@media screen and (max-width:992px) {
+    .Pic {
+        width: 50%;
+    }
+
+    .ProjectContainer {
+        width: 18rem;
+    }
+    .Hero
+    {
+        flex-direction: column-reverse;
+    align-items: center;
+    }
+}
