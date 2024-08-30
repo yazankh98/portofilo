@@ -3,7 +3,7 @@ import './Certificate.css'
 import { Link } from 'react-router-dom';
 const Certificate = () => {
     const token = localStorage.getItem('token');
-    const CreateCertificateURL = 'http://127.0.0.1:8000/api/certificate/store'
+    const CreateCertificateURL = '/api/certificate/store'
     const [certificateName, setcertificateName] = useState("")
     const [institute, setinstitute] = useState("")
     const [certificateDuration, setcertificateDuration] = useState("")
@@ -33,7 +33,7 @@ const Certificate = () => {
     }
     useEffect(() => {
         axios.get(
-            'http://127.0.0.1:8000/api/certificates',
+            '/api/certificates',
             {
             }
         ).then((response) => {
@@ -47,7 +47,7 @@ const Certificate = () => {
     }, [])
 
     const deleteUserInfo = async (id) => {
-        await axios.delete(`http://127.0.0.1:8000/api/certificate/delete/${id}`,
+        await axios.delete(`/api/certificate/delete/${id}`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`

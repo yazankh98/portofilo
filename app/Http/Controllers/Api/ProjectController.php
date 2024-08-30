@@ -36,7 +36,7 @@ class ProjectController extends Controller
         if ($request->hasFile('image')) {
             $image = $request['image'];
             $imageName = time() . '.' . $image->getClientOriginalExtension();
-            Storage::disk('public')->put($imageName, file_get_contents($request->image));
+            $image->move(public_path('images'), $imageName);
         }
         $project = new Project();
         $project->name = $request['name'];
@@ -71,7 +71,7 @@ class ProjectController extends Controller
         if ($request->hasFile('image')) {
             $image = $request['image'];
             $imageName = time() . '.' . $image->getClientOriginalExtension();
-            Storage::disk('public')->put($imageName, file_get_contents($request->image));
+            $image->move(public_path('images'), $imageName);
         }
         $project->name = $request['name'];
         $project->about = $request['about'];
@@ -87,10 +87,6 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        $storage = Storage::disk('public');
-        if ($storage->exists($project->image)) {
-            $storage->delete($project->image);
-        }
         $project->delete();
         return response()->json(['message', 'project deleted successfuly'], 201);
     }

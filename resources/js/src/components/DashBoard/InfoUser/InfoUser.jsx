@@ -4,7 +4,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom';
 const InfoUser = () => {
     const token = localStorage.getItem('token');
-    const CreateInfoURL = 'http://127.0.0.1:8000/api/admin/store'
+    const CreateInfoURL = '/api/admin/store'
 
     const [nameUser, setnameUser] = useState("")
     const [jobUser, setjobUser] = useState("")
@@ -39,7 +39,7 @@ const InfoUser = () => {
     }
     useEffect(() => {
         axios.get(
-            'http://127.0.0.1:8000/api/admins',
+            '/api/admins',
             {
             }
         ).then((response) => {
@@ -53,7 +53,7 @@ const InfoUser = () => {
     }, [])
 
     const deleteUserInfo = async (id) => {
-        await axios.delete(`http://127.0.0.1:8000/api/admin/delete/${id}`,
+        await axios.delete(`/api/admin/delete/${id}`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`

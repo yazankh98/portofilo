@@ -3,7 +3,7 @@ import './Experience.css'
 import { Link } from 'react-router-dom';
 const Experience = () => {
     const token = localStorage.getItem('token');
-    const CreateExperienceURL = 'http://127.0.0.1:8000/api/experience/store'
+    const CreateExperienceURL = '/api/experience/store'
     const [experienceName, setexperienceName] = useState("")
     const [company, setcompany] = useState("")
     const [experienceDuration, setexperienceDuration] = useState("")
@@ -35,7 +35,7 @@ const Experience = () => {
     }
     useEffect(() => {
         axios.get(
-            'http://127.0.0.1:8000/api/experiences',
+            '/api/experiences',
             {
             }
         ).then((response) => {
@@ -50,7 +50,7 @@ const Experience = () => {
 
     }, [])
     const deleteUserInfo = async (id) => {
-        await axios.delete(`http://127.0.0.1:8000/api/experience/delete/${id}`,
+        await axios.delete(`/api/experience/delete/${id}`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`

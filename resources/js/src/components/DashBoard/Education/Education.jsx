@@ -3,7 +3,7 @@ import './Education.css'
 import { Link } from 'react-router-dom';
 const Education = () => {
     const token = localStorage.getItem('token');
-    const CreateEducationURL = 'http://127.0.0.1:8000/api/education/store'
+    const CreateEducationURL = '/api/education/store'
     const [educationName, seteducationName] = useState("")
     const [university, setuniversity] = useState("")
     const [educationDuration, seteducationDuration] = useState("")
@@ -35,7 +35,7 @@ const Education = () => {
     }
     useEffect(() => {
         axios.get(
-            'http://127.0.0.1:8000/api/educations',
+            '/api/educations',
             {
             }
         ).then((response) => {
@@ -48,7 +48,7 @@ const Education = () => {
 
     }, [])
     const deleteUserInfo = async (id) => {
-        await axios.delete(`http://127.0.0.1:8000/api/education/delete/${id}`,
+        await axios.delete(`/api/education/delete/${id}`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`

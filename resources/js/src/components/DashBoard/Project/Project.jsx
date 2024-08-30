@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Project.css'
 const Project = () => {
     const token = localStorage.getItem('token');
-    const CreateProjectURL = 'http://127.0.0.1:8000/api/project/store'
+    const CreateProjectURL = '/api/project/store'
     const [projectName, setprojectName] = useState("")
     const [projectAbout, setprojectAbout] = useState("")
     const [projectUrl, setprojectUrl] = useState("")
@@ -40,7 +40,7 @@ const Project = () => {
     }
     useEffect(() => {
         axios.get(
-            'http://127.0.0.1:8000/api/projects',
+            '/api/projects',
             {
             }
         ).then((response) => {
@@ -54,7 +54,7 @@ const Project = () => {
 
     }, [])
     const deleteUserInfo = async (id) => {
-        await axios.delete(`http://127.0.0.1:8000/api/project/delete/${id}`,
+        await axios.delete(`/api/project/delete/${id}`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`

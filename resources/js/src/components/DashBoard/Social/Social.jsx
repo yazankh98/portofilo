@@ -3,7 +3,7 @@ import './Social.css'
 import { Link } from 'react-router-dom';
 const Social = () => {
     const token = localStorage.getItem('token');
-    const CreateSocialURL = 'http://127.0.0.1:8000/api/social/store'
+    const CreateSocialURL = '/api/social/store'
     const [socialName, setsocialName] = useState("")
     const [socialUrl, setsocialUrl] = useState("")
 
@@ -33,7 +33,7 @@ const Social = () => {
     }
     useEffect(() => {
         axios.get(
-            'http://127.0.0.1:8000/api/socials',
+            '/api/socials',
             {
             }
         ).then((response) => {
@@ -46,7 +46,7 @@ const Social = () => {
 
     }, [])
     const deleteUserInfo = async (id) => {
-        await axios.delete(`http://127.0.0.1:8000/api/social/delete/${id}`,
+        await axios.delete(`/api/social/delete/${id}`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`

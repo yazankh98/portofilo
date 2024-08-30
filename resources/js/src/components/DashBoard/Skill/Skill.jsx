@@ -3,7 +3,7 @@ import './Skill.css'
 import { Link } from 'react-router-dom';
 const Skill = () => {
     const token = localStorage.getItem('token');
-    const CreateSkillURL = 'http://127.0.0.1:8000/api/skill/store'
+    const CreateSkillURL = '/api/skill/store'
     const [SkillName, setSkillName] = useState("")
     const [message, setmessage] = useState(false);
 
@@ -31,7 +31,7 @@ const Skill = () => {
     }
     useEffect(() => {
         axios.get(
-            'http://127.0.0.1:8000/api/skills',
+            '/api/skills',
             {
             }
         ).then((response) => {
@@ -44,7 +44,7 @@ const Skill = () => {
 
     }, [])
     const deleteUserInfo = async (id) => {
-        await axios.delete(`http://127.0.0.1:8000/api/skill/delete/${id}`,
+        await axios.delete(`/api/skill/delete/${id}`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`

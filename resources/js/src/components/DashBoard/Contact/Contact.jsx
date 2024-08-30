@@ -6,7 +6,7 @@ const Contact = () => {
     const [infoContact, setinfoContact] = useState("")
     useEffect(() => {
         axios.get(
-            'http://127.0.0.1:8000/api/socials',
+            '/api/socials',
             {
             }
         ).then((response) => {

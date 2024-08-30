@@ -15,7 +15,7 @@ const Home = () => {
 
     useEffect(() => {
         axios.get(
-            'http://127.0.0.1:8000/api/educations',
+            '/api/educations',
             {
             }
         ).then((response) => {
@@ -25,7 +25,7 @@ const Home = () => {
     }, [])
     useEffect(() => {
         axios.get(
-            'http://127.0.0.1:8000/api/certificates',
+            '/api/certificates',
             {
             }
         ).then((response) => {
@@ -35,7 +35,7 @@ const Home = () => {
     }, [])
     useEffect(() => {
         axios.get(
-            'http://127.0.0.1:8000/api/skills',
+            '/api/skills',
             {
             }
         ).then((response) => {
@@ -45,7 +45,7 @@ const Home = () => {
     }, [])
     useEffect(() => {
         axios.get(
-            'http://127.0.0.1:8000/api/experiences',
+            '/api/experiences',
             {
             }
         ).then((response) => {
@@ -55,7 +55,7 @@ const Home = () => {
     }, [])
     useEffect(() => {
         axios.get(
-            'http://127.0.0.1:8000/api/projects', {})
+            '/api/projects', {})
             .then((response) => {
                 (setinfoProject(response.data[1]))
             }).catch(erroe => console.log(erroe))
@@ -139,7 +139,7 @@ const Home = () => {
                     return (
                         <div key={index} >
                             <div className="card ProjectContainer ">
-                                <img src={`/storage/${element.image}`} className="card-img-top" alt="..." />
+                                <img src={`/images/${element.image}`} className="card-img-top" alt="..." />
                                 <div className="card-body">
                                     <h5 className="card-title">{element.name}</h5>
                                     <p className="card-text">{element.about}</p>

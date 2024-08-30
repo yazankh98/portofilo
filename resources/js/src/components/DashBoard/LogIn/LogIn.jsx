@@ -11,7 +11,7 @@ const LogIn = () => {
     
     function handleSubmit(event) {
         event.preventDefault();
-        axios.post('http://127.0.0.1:8000/api/login', { email, password })
+        axios.post('/api/login', { email, password })
             .then(response => {
                 localStorage.setItem('token', response.data.token);
                 axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.token}`;
