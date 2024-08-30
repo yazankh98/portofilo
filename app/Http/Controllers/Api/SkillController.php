@@ -23,7 +23,6 @@ class SkillController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize('create', User::class);
         $skillData = $request->validate([
             'name' => 'required|string',
         ]);
@@ -45,7 +44,6 @@ class SkillController extends Controller
      */
     public function update(Request $request, Skill $skill)
     {
-        $this->authorize('create', User::class);
         $request->validate([
             'name' => 'required|string'
         ]);

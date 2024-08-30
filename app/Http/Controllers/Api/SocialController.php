@@ -24,7 +24,6 @@ class SocialController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize('create', User::class);
         $socialData = $request->validate([
             'name' => 'required|string',
             'url' => 'string|url',
@@ -47,7 +46,6 @@ class SocialController extends Controller
      */
     public function update(Request $request, Social $social)
     {
-        $this->authorize('create', User::class);
         $request->validate([
             'name' => 'required|string',
             'url' => 'required|url',

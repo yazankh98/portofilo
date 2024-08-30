@@ -24,7 +24,6 @@ class EducationController extends Controller
     public function store(Request $request)
     {
 
-        $this->authorize('create', User::class);
         $educationData = $request->validate([
             'name' => 'required|string',
             'university' => 'required|string',
@@ -49,7 +48,6 @@ class EducationController extends Controller
      */
     public function update(Request $request, Education $education)
     {
-        $this->authorize('create', User::class);
         $request->validate([
             'name' => 'required|string',
             'university' => 'required|string',

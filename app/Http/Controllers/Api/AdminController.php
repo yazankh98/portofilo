@@ -14,7 +14,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $admin = Admin::first();
+        $admin = Admin::all();
         return response()->json(['data', $admin]);
     }
 
@@ -23,7 +23,6 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize('create', User::class);
         $dataCreate = $request->validate([
             'name' => 'required |string',
             'job' => 'required|string',
@@ -45,7 +44,6 @@ class AdminController extends Controller
      */
     public function update(Request $request, Admin $admin)
     {
-        $this->authorize('create', User::class);
         $request->validate([
             'name' => 'required |string',
             'job' => 'required|string',

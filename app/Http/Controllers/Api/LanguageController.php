@@ -23,7 +23,6 @@ class LanguageController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize('create', User::class);
         $languageData = $request->validate([
             'name' => 'required|string',
             'about' => 'required|string',
@@ -46,7 +45,6 @@ class LanguageController extends Controller
      */
     public function update(Request $request, Language $language)
     {
-        $this->authorize('create', User::class);
         $request->validate([
             'name' => 'required|string',
             'about' => 'required|string',

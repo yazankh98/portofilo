@@ -32,7 +32,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 
-
     Route::post('/admin/store', [AdminController::class, 'store']);
     Route::put('/admin/update/{admin}', [AdminController::class, 'update']);
     Route::delete('/admin/delete/{admin}', [AdminController::class, 'destroy']);
@@ -62,23 +61,13 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/social/store', [SocialController::class, 'store']);
     Route::put('/social/update/{social}', [SocialController::class, 'update']);
     Route::delete('/social/delete/{social}', [SocialController::class, 'destroy']);
-
-
-    
 });
 
 Route::get('/admins', [AdminController::class, 'index']);
-
 Route::get('/certificates', [CertificateController::class, 'index']);
 Route::get('/experiences', [ExperienceController::class, 'index']);
 Route::get('/projects', [ProjectController::class, 'index']);
 Route::get('/skills', [SkillController::class, 'index']);
 Route::get('/socials', [SocialController::class, 'index']);
-
-
-
-
-
 Route::get('/educations', [EducationController::class, 'index']);
-
 Route::post('/login', [AuthController::class, 'login']);

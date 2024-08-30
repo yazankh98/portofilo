@@ -24,7 +24,7 @@ class ExperienceController extends Controller
     public function store(Request $request)
     {
 
-        $this->authorize('create', User::class);
+
         $experienceData = $request->validate([
             'name' => 'required|string',
             'company' => 'required|string',
@@ -48,7 +48,6 @@ class ExperienceController extends Controller
      */
     public function update(Request $request, Experience $experience)
     {
-        $this->authorize('create', User::class);
         $request->validate([
             'name' => 'required|string',
             'company' => 'required|string',

@@ -23,7 +23,7 @@ class CertificateController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize('create', User::class);
+        
         $certificateData = $request->validate([
             'name' => 'required|string',
             'institute' => 'required|string',
@@ -47,7 +47,7 @@ class CertificateController extends Controller
      */
     public function update(Request $request, Certificate $certificate)
     {
-        $this->authorize('create', User::class);
+        
         $request->validate([
             'name' => 'required|string',
             'institute' => 'required|string',

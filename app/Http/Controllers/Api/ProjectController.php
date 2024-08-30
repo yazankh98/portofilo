@@ -27,7 +27,6 @@ class ProjectController extends Controller
 
     public function store(Request $request)
     {
-        $this->authorize('create', User::class);
         $request->validate([
             'name' => 'required|string',
             'about' => 'required|string',
@@ -46,7 +45,6 @@ class ProjectController extends Controller
         $project->image = $imageName;
         $project->save();
 
-
         return response()->json(['message', 'project added successfuly'], 201);
     }
 
@@ -63,7 +61,6 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        $this->authorize('create', User::class);
         $request->validate([
             'name' => 'string',
             'about' => 'string',
